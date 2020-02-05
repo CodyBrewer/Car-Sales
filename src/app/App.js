@@ -20,10 +20,10 @@ const App = props => {
         <Header />
         <AddedFeatures />
       </div>
-      {/* <div className="box">
+      <div className="box">
         <AdditionalFeatures />
-        <Total />
-      </div> */}
+        {/* <Total /> */}
+      </div>
     </div>
   );
 };
