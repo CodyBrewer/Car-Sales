@@ -4,6 +4,7 @@ const initialState = {
   additionalPrice: 0,
   cars: [
     {
+      id: 1,
       price: 26395,
       name: "2019 Ford Mustang",
       image:
@@ -17,6 +18,7 @@ const initialState = {
       ]
     },
     {
+      id: 2,
       price: 59995,
       name: "2020 Chevy Corvette",
       image:
@@ -45,7 +47,9 @@ const featureReducer = (state = initialState, { type, payload }) => {
             ...state.activeCar,
             features: [...state.activeCar.features, payload],
             additionalFeatures: [
-              ...state.activeCar.additionalFeatures.filter(obj => obj.id !== payload.id)
+              ...state.activeCar.additionalFeatures.filter(
+                obj => obj.id !== payload.id
+              )
             ]
           }
         };
@@ -65,12 +69,18 @@ const featureReducer = (state = initialState, { type, payload }) => {
         }
       };
     case SELECT_CAR:
-      return {
-        ...state,
-        activeCar: {
-          ...payload
-        }
-      };
+      if (state.activeCar.id !== payload.id) {
+        return {
+          ...state,
+          activeCar: {
+            ...payload
+          }
+        };
+      } else {
+        return {
+          ...state
+        };
+      }
     default:
       return state;
   }

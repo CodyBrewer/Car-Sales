@@ -5,11 +5,11 @@ import Car from "./Car";
 const Cars = props => {
   const { cars } = props;
   return (
-    <>
+    <div className="boxes">
       {cars.map(car => (
-        <Car car={car} />
+        <Car car={car} key={car.id} />
       ))}
-    </>
+    </div>
   );
 };
 
