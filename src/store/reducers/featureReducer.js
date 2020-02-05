@@ -17,7 +17,7 @@ const initialState = {
   ]
 };
 
-const carReducer = (state = initialState, { type, payload }) => {
+const featureReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ADD_FEATURE:
       console.log(payload);
@@ -51,4 +51,4 @@ const carReducer = (state = initialState, { type, payload }) => {
   }
 };
 
-export default carReducer;
+export default featureReducer;
