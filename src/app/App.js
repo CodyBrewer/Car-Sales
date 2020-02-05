@@ -22,7 +22,7 @@ const App = props => {
       </div>
       <div className="box">
         <AdditionalFeatures />
-        {/* <Total /> */}
+        <Total />
       </div>
     </div>
   );
