@@ -1,3 +1,5 @@
+import { ADD_FEATURE } from "../actions/types";
+
 const initialState = {
   additionalPrice: 0,
   car: {
@@ -17,6 +19,21 @@ const initialState = {
 
 const carReducer = (state = initialState, { type, payload }) => {
   switch (type) {
+    case ADD_FEATURE:
+      if (!state.car.features.includes(payload)) {
+        return {
+          ...state,
+          additionalPrice: state.additionalPrice + payload.price,
+          car: {
+            ...state.car,
+            features: [
+              ...state.car.features,
+              state.additionalFeatures.filter(obj => obj.id !== payload.id)
+            ]
+          }
+        };
+      }
+      break;
     default:
       return state;
   }
