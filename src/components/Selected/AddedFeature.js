@@ -1,5 +1,5 @@
 import React from "react";
-import { removeFeature } from "../store/actions";
+import { removeFeature } from "../../store/actions";
 import { connect } from "react-redux";
 
 const AddedFeature = props => {
