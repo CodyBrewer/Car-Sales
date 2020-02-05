@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../Header";
-import AddedFeatures from "../AddedFeatures";
-import AdditionalFeatures from "../AdditionalFeatures";
-import Total from "../Total";
+import Header from "./Header";
+import AddedFeatures from "./AddedFeatures";
+import AdditionalFeatures from "./AdditionalFeatures";
+import Total from "./Total";
 
 const Selected = () => {
   return (
