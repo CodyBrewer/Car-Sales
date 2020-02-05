@@ -1,4 +1,4 @@
-import { ADD_FEATURE } from "../actions/types";
+import { ADD_FEATURE, REMOVE_FEATURE } from "../actions/types";
 
 const initialState = {
   additionalPrice: 0,
@@ -20,20 +20,32 @@ const initialState = {
 const carReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ADD_FEATURE:
+      console.log(payload);
       if (!state.car.features.includes(payload)) {
         return {
           ...state,
           additionalPrice: state.additionalPrice + payload.price,
           car: {
             ...state.car,
-            features: [
-              ...state.car.features,
-              state.additionalFeatures.filter(obj => obj.id !== payload.id)
-            ]
-          }
+            features: [...state.car.features, payload]
+          },
+          additionalFeatures: [
+            ...state.additionalFeatures.filter(obj => obj.id !== payload.id)
+          ]
         };
+      } else {
+        return state;
       }
-      break;
+    case REMOVE_FEATURE:
+      return {
+        ...state,
+        additionalPrice: state.additionalPrice - payload.price,
+        car: {
+          ...state.car,
+          features: [...state.car.features.filter(obj => obj.id !== payload.id)]
+        },
+        additionalFeatures: [...state.additionalFeatures, payload]
+      };
     default:
       return state;
   }

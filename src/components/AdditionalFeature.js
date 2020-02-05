@@ -4,7 +4,7 @@ import { addFeature } from "../store/actions";
 
 const AdditionalFeature = props => {
   const { feature, addFeature } = props;
-
+  console.log(feature);
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
