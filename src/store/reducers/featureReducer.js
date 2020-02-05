@@ -30,6 +30,20 @@ const initialState = {
         { id: 3, name: "Z51 Performance Package", price: 5000 },
         { id: 4, name: "High wing spoiler", price: 1150 }
       ]
+    },
+    {
+      id: 3,
+      price: 29895,
+      name: "2020 Dodge Charger",
+      image:
+        "https://cdn.motor1.com/images/mgl/1Mpwp/s1/2020-dodge-charger-gt.jpg",
+      features: [],
+      additionalFeatures: [
+        { id: 1, name: "Alpine Audio Group with Subwoofer", price: 1095 },
+        { id: 2, name: "Power Sunroof", price: 1295 },
+        { id: 3, name: "Blacktop Package", price: 1295 },
+        { id: 4, name: "Cold Weather Package", price: 495 }
+      ]
     }
   ],
   activeCar: {}

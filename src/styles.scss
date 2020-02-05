@@ -8,11 +8,11 @@ body {
   margin: 0;
   display: grid;
   padding: 3em;
-  // place-items: center;
+  place-items: center;
 }
 .boxes {
   display: grid;
-  grid-gap: 2em;
+  grid-gap: 1em;
   grid-template-columns: repeat(2, minmax(350px, 1fr));
   grid-template-rows: auto;
   width: 100vw;
@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  width: 45vw;
+  width: 20vw;
   h1 {
     font-size: 20px;
     margin: 0 0 1rem 0;
